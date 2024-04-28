@@ -1,0 +1,19 @@
+<mvc:View controllerName="jose.cavero.odatap.odataproject.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+	 xmlns:l="sap.ui.layout"
+    xmlns:f="sap.f">
+    <Page id="page" title="Detail view">
+        <content>
+			<Panel headerText="Product Details">
+				<l:Grid>
+					<Text text="{ProductID}"></Text>
+					<Text text="{Name}"></Text>
+					<Text text="{Description}"></Text>
+					<Text text="{Price}"></Text>
+				</l:Grid>
+			</Panel>
+		</content>
+    </Page>
+</mvc:View>

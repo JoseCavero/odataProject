@@ -28,7 +28,14 @@ sap.ui.define([
 				));
                 // Apply filters
 				oBinding.filter(aFilter);
-            }
+            },
+            onListItemPress: function(oEvent) {
+				/*var oRouter = sap.ui.core.UIComponent.getRouterFor(this);*/
+				var oRouter = this.getOwnerComponent().getRouter();
+				oRouter.navTo("RouteDetail", {
+					ProductID: oEvent.getSource().getBindingContextPath().split("'")[1]
+				});
+			}
     });
     }
 );
