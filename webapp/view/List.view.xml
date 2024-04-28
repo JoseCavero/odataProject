@@ -3,6 +3,46 @@
     xmlns="sap.m"
     xmlns:f="sap.f">
     <Page id="page" title="{i18n>title}">
-        
+         <Table items="{/ProductSet}" growing="true" growingThreshold="20" class="sapUiResponsiveMargin" width="auto">
+				<headerToolbar>
+					<Toolbar>
+						<Label text="List display"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<header><Text text="ProductID"/></header>
+					</Column>
+					<Column>
+						<header><Text text="Name"/>
+						</header>
+					</Column>
+                    <Column>
+						<header><Text text="Weight"/>
+						</header>
+					</Column>
+					<Column>
+						<header><Text text="Price"/>
+						</header>
+					</Column>
+					
+					<Column>
+						<header><Text text="Category"/>
+						</header>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Navigation" press="onListItemPress">
+						<cells>
+							<ObjectIdentifier text="{ProductID}"/>
+							<ObjectIdentifier text="{Name}"/>
+                            <ObjectNumber number="{WeightMeasure}" unit="{WeightUnit}"></ObjectNumber>
+							<Text
+								text="{ parts: [ {path:'Price'},{path:'CurrencyCode'} ], type:'sap.ui.model.type.Currency', formatOptions:{ showMeasure:true  } }"></Text>
+						<ObjectIdentifier text="{Category}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
     </Page>
 </mvc:View>
