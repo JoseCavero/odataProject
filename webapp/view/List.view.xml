@@ -1,0 +1,8 @@
+<mvc:View controllerName="jose.cavero.odatap.odataproject.controller.List"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f">
+    <Page id="page" title="{i18n>title}">
+        
+    </Page>
+</mvc:View>
