@@ -6,7 +6,7 @@
     xmlns:f="sap.f">
     <Page id="page" title="{i18n>title}">
          <Table id="listTable" items="{ path:'/ProductSet',
-                                        parameters:{ expand:'ToSupplier' },
+                                        parameters:{ expand:'ToSupplier', select:'ProductID, Name, WeightMeasure, WeightUnit, Price, CurrencyCode, Category, ToSupplier/BusinessPartnerID' },
                                         sorter:{ path:'Category', group:true }         
                                       }" growing="true" growingThreshold="20" class="sapUiResponsiveMargin" width="auto">
 				<headerToolbar>
