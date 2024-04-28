@@ -5,7 +5,37 @@
     xmlns="sap.m"
     xmlns:f="sap.f">
     <Page id="page" title="{i18n>title}">
-         <Table id="listTable" items="{ path:'/ProductSet',
+        <IconTabBar id="idIconTabBar"
+                    select=".onFilterSelect"
+                    class="sapUiResponsiveContentPadding">
+            <items>
+			<IconTabFilter
+				showAll="true"
+				count="{itbModel>/Total}"
+				text="Products"
+				key="All" />
+			<IconTabSeparator />
+			<IconTabFilter
+				icon="sap-icon://begin"
+				iconColor="Positive"
+				count="{itbModel>/Ok}"
+				text="Ok"
+				key="Ok" />
+			<IconTabFilter
+				icon="sap-icon://compare"
+				iconColor="Critical"
+				count="{itbModel>/Heavy}"
+				text="Heavy"
+				key="Heavy" />
+			<IconTabFilter
+				icon="sap-icon://inventory"
+				iconColor="Negative"
+				count="{itbModel>/Overweight}"
+				text="Overweight"
+				key="Overweight" />
+		</items>
+        <content>
+            <Table id="listTable" items="{ path:'/ProductSet',
                                         parameters:{ expand:'ToSupplier', select:'ProductID, Name, WeightMeasure, WeightUnit, Price, CurrencyCode, Category, ToSupplier/BusinessPartnerID' },
                                         sorter:{ path:'Category', group:true }         
                                       }" growing="true" growingThreshold="20" class="sapUiResponsiveMargin" width="auto">
@@ -57,5 +87,7 @@
 					</ColumnListItem>
 				</items>
 			</Table>
+        </content>
+        </IconTabBar>
     </Page>
 </mvc:View>
