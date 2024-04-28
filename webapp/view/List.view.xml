@@ -41,7 +41,7 @@
                                       }" growing="true" growingThreshold="20" class="sapUiResponsiveMargin" width="auto">
 				<headerToolbar>
 					<Toolbar>
-						<Label text="List recovered from OData Service"/>
+						<Label text="{i18n>LIST_DESCR}"/>
                         <ToolbarSeparator ></ToolbarSeparator>
                         <SearchField width="30%" search="onSearch"></SearchField>
 					</Toolbar>
